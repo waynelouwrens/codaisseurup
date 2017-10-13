@@ -15,6 +15,11 @@
     <p class="alert"><%= alert %></p>
 
     <div class="container">
+      <% if notice.present? %>
+       <p class="alert alert-info" role="alert"><%= notice %></p>
+      <% elsif alert.present? %>
+        <p class="alert alert-danger" role="alert"><%= alert %></p>
+      <% end %>
       <%= yield %>
     </div>
   </body>

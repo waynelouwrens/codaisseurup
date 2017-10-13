@@ -1,4 +1,16 @@
+Category.destroy_all
+Event.delete_all
 User.destroy_all
+
+sixties = Category.create(name: "Sixties")
+seventies = Category.create(name: "Seventies")
+gatsby = Category.create(name: "Gatsby")
+bo_and_ho = Category.create(name: "Bo & Ho")
+corporate = Category.create(name: "Corporate")
+beach = Category.create(name: "Beach")
+kiddies = Category.create(name: "Kiddies")
+music_show = Category.create(name: "Music")
+
 
 wayne = User.create!(
   email: 'wayne.louwrens@gmail.com',
@@ -16,5 +28,6 @@ Event.create!(
   starts_at: DateTime.parse("10/11/2017 08:00"),
   ends_at: DateTime.parse("10/11/2017 18:00"),
   active: true,
-  user: wayne
+  user: wayne,
+  categories: [gatsby,music_show]
 )
